@@ -74,14 +74,6 @@ src/
 
 ---
 
-## 🧪 Testing
-
-- `Jest` + `@testing-library/react-native`
-- Simulated offline mode for auth flows (coming soon)
-- Easily mock SecureStore and Redux
-
----
-
 ## 🧙‍♂️ Dev Commands
 
 ```bash
