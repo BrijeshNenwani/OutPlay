@@ -1,116 +1,96 @@
-# 🔐 AuthMate — Your Offline-First Authentication Playground 🚀
+# 🛒 React Native Shopping App
 
-Welcome to **AuthMate** – a modern, scalable, and offline-capable React Native starter kit powered by Expo, Redux Toolkit, and SecureStore. Built for real-world mobile authentication flows, crafted with ♥ by a dev who thinks like a CTO.
+A simple yet functional shopping app built using **React Native**, demonstrating clean architecture, state management, local database integration, and smooth user experience across screens.
+
+## ✅ Features Implemented
+
+- 🔐 **Authentication Flow**  
+  - Login functionality with `AuthContext`  
+  - Global state management using `React Context API`
+
+- 🧭 **Navigation**  
+  - Seamless screen transitions using `react-navigation`
+
+- 🛍️ **Product List Screen**  
+  - Infinite scrolling (paginated) product list  
+  - Smooth, responsive layout and performance-optimized FlatList
+
+- 📦 **Product Details Screen**  
+  - Displays full product info  
+  - Self-scrolling image carousel with animation for product thumbnails
+
+- 🛒 **Cart Management**  
+  - Local cart storage using **SQLite**  
+  - Add, update, and remove items from cart  
+  - Persistent across app reloads
+
+- ⚙️ **State Management**  
+  - Global app state handled using `Redux`  
+  - Separation of concerns with dedicated slices (e.g., for cart)
+
+- 🌐 **Network Layer**  
+  - Built a clean request controller using the `fetch` API  
+  - Centralized error handling and headers logic
+
+- 🎨 **UI/UX**  
+  - Consistent, minimalist design across all screens  
 
 ---
 
-## 🧠 What’s Inside?
+## 🔧 Tech Stack
 
-| Feature                          | Description |
-|----------------------------------|-------------|
-| ✅ **Secure Auth Flow**          | Token-based login & registration with SecureStore |
-| 💤 **Offline-First Ready**       | Reads token even without internet — just like magic! |
-| 🗺️ **React Navigation 6**        | Seamless screen transitions with auth gating |
-| 🧠 **Redux Toolkit Integration** | App-wide state management done right |
-| 🔐 **JWT Expiry Check**          | Skips stale tokens, no awkward logins |
-| 🧪 **Future-Ready Testing Setup**| Unit and integration testing friendly |
-| 💄 **Composable UI**             | Built with reusable, testable components |
+- React Native (with TypeScript)
+- React Navigation
+- Redux Toolkit
+- SQLite
+- Context API for Auth
+- Fetch API for networking
 
 ---
 
-## 🔥 Demo
+## 📦 Upcoming Features
 
-![auth flow demo](./assets/demo.gif)  
-_Watch how AuthMate protects you from stale tokens and sleepy user sessions._
+- 📴 **Offline-First Support**  
+  - Complete local-first data handling with cache fallback
+
+- 💾 **Liked Products**  
+  - Add to favorites/likes using SQLite
+
+- 🔃 **Data Sync**  
+  - Smart syncing with remote server when online
+
+- 🧪 **Unit Tests**  
+  - Adding tests with `Jest`
 
 ---
 
-## 📦 Tech Stack
+## 📸 Screenshots
 
-- **React Native** with **Expo SDK**
-- **React Navigation 6** (Stack, Tabs)
-- **Redux Toolkit** + **TypeScript**
-- **Expo SecureStore** for secure local storage
-- **JWT** for stateless session management
-- Clean folder structure + future CI/CD readiness
+<table>
+  <tr>
+    <td><img src="screenshots/ss_1.png" width="200" /></td>
+    <td><img src="screenshots/ss_2.png" width="200" /></td>
+    <td><img src="screenshots/ss_3.png" width="200" /></td>
+  </tr>
+   <tr>
+    <td><img src="screenshots/ss_4.png" width="200" /></td>
+    <td><img src="screenshots/ss_5.png" width="200" /></td>
+</tr>
+</table>
 
 ---
 
 ## 🚀 Getting Started
 
 ```bash
-git clone https://github.com/your-username/authmate.git
-cd authmate
+git clone https://github.com/BrijeshNenwani/OutPlay.git
+cd OutPlay
 npm install
-npx expo start
+npm prebuild
+cd android
+./gradlew assembleRelease
 ```
+then go to \android\app\build\outputs\release, and install this apk in your android phone.
 
----
-
-## 🧱 Folder Structure
-
-```
-src/
-├── navigation/     # AppNavigator, AuthNavigator, NavigationContainer setup
-├── store/          # Redux slices and store config
-├── hooks/          # Custom hooks like useAuth
-├── context/        # AuthProvider (if not fully moved to Redux)
-├── screens/        # Login, Register, Home, etc.
-├── components/     # Reusable UI elements
-├── services/       # API and SecureStore helpers
-└── utils/          # Helper functions (e.g., token expiry checker)
-```
-
----
-
-## 🤖 Pro-Level Auth Design
-
-✅ Token Expiry Check  
-✅ Auth Token Refresh (planned)  
-✅ SecureStorage → Redux sync  
-✅ Conditional Navigation (`AppNavigator` vs `AuthNavigator`)  
-✅ Offline Mode Awareness  
-✅ Server-driven invalidation (coming soon)
-
----
-
-## 🧙‍♂️ Dev Commands
-
-```bash
-# Run dev server
-npx expo start
-
-# Format code
-npm run format
-
-# Run tests
-npm test
-```
-
----
-
-## 🌍 Contributing
-
-We welcome issues, PRs, and high fives!  
-Fork the repo → create a feature branch → push → open a PR.
-
----
-
-## 📄 License
-
-MIT License © 2025 — [Your Name](https://github.com/your-username)
-
----
-
-## 🧡 Built With Developer Empathy
-
-Crafted for devs who care about:
-- **Performance**
-- **Offline capability**
-- **Secure flows**
-- **Readable architecture**
-- **Scalability**
-
----
-
-> **PS**: Want backend integration too (JWT issuance, refresh logic, user APIs)? Ping me to generate a full-stack version with Express or Django!
+Regards,
+Brijesh
