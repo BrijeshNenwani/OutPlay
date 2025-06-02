@@ -86,11 +86,12 @@ A simple yet functional shopping app built using **React Native**, demonstrating
 git clone https://github.com/BrijeshNenwani/OutPlay.git
 cd OutPlay
 npm install
-npm prebuild
-cd android
-./gradlew assembleRelease
+
+# Make sure you've installed and you're logged into eas. then run:
+eas build --platform android --profile preview
+
 ```
-then go to `\android\app\build\outputs\release`, and install this apk in your android phone.
+download from the provided link when ready and install it on your android phones
 
 Regards,
 Brijesh
