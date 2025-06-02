@@ -27,6 +27,12 @@
     },
     "plugins": [
       "expo-sqlite"
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "a2c9eec7-b947-48f1-bb5e-06ff96ab8bb6"
+      }
+    },
+    "owner": "realmobiledev"
   }
 }
