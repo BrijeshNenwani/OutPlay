@@ -1,4 +1,9 @@
 {
-  "compilerOptions": {"module": "ESNext"},
+  "compilerOptions": {
+    "module": "esnext", // ✅ or "es2020", "commonjs", etc.
+    "target": "esnext", // optional but recommended
+    "moduleResolution": "node" // ensures dynamic import works with Node-style modules
+  },
+
   "extends": "expo/tsconfig.base"
 }

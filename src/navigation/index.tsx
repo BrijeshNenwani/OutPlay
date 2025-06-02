@@ -3,6 +3,7 @@ import React, { lazy, Suspense, useEffect, useState } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { useAuth } from "../hooks/auth";
+import FallbackScreen from "../screens/FallbackScreen";
 const AppNavigator = lazy(() => import("./AppNavigator"));
 const AuthNavigator = lazy(() => import("./AuthNavigator"));
 
@@ -10,17 +11,13 @@ const RootNavigator = () => {
   const { isAuthenticated, isTokenLoading } = useAuth();
 
   if (isTokenLoading) {
-    return (
-      <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-        <ActivityIndicator size="large" color={"black"} />
-      </View>
-    );
+    return <FallbackScreen />;
   }
 
   return (
     <SafeAreaProvider>
       <NavigationContainer>
-        <Suspense fallback={null}>
+        <Suspense fallback={<FallbackScreen />}>
           {isAuthenticated ? <AppNavigator /> : <AuthNavigator />}
         </Suspense>
       </NavigationContainer>

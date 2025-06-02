@@ -1,13 +1,10 @@
-import { configureStore, EnhancedStore } from "@reduxjs/toolkit";
-import { AppState } from "react-native";
-import { useDispatch } from "react-redux";
-import { TypedUseSelectorHook, useSelector } from "react-redux";
-// import authReducer from "./slices/auth";
+import { configureStore } from "@reduxjs/toolkit";
+import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
+
 import userReducer from "./slices/user";
 
-export const store: EnhancedStore = configureStore({
+export const store = configureStore({
   reducer: {
-    // auth: authReducer,
     user: userReducer,
   },
 });
@@ -15,7 +12,6 @@ export const store: EnhancedStore = configureStore({
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
 
-export const useAppSelector: TypedUseSelectorHook<RootState> =
-  useSelector.withTypes<RootState>();
+export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
 export const useAppDispatch: () => AppDispatch = () =>
   useDispatch<AppDispatch>();
